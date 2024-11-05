@@ -1,6 +1,6 @@
 package co.edu.udea.qa.storeapi.steps.definitions;
 
-import co.edu.udea.qa.storeapi.tasks.Connect;
+import co.edu.udea.qa.storeapi.tasks.ConnectTo;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -45,7 +45,7 @@ public class GetAllProductsStepDefinition {
 
     @Given(GIVEN_STEP)
     public void givenStep() {
-        customer.attemptsTo(Connect.service());
+        customer.attemptsTo(ConnectTo.service());
     }
 
     @When(SCENARIO_ONE_WHEN_STEP)

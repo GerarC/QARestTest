@@ -1,6 +1,6 @@
 package co.edu.udea.qa.storeapi.steps.definitions;
 
-import co.edu.udea.qa.storeapi.tasks.Connect;
+import co.edu.udea.qa.storeapi.tasks.ConnectTo;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -12,8 +12,6 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 import org.hamcrest.Matchers;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -30,7 +28,6 @@ public class CreateProductStepDefinition {
     public static final String SCENARIO_ONE_WHEN_STEP = "I create a new product with the following details";
     public static final String SCENARIO_ONE_THEN_STEP = "the product is successfully created with these details";
     public static final String SCENARIO_ONE_THEN_SHOULD = "Product creation response";
-    private static final Logger log = LoggerFactory.getLogger(CreateProductStepDefinition.class);
 
 
     Actor supplier = Actor.named(SUPPLIER_ACTOR);
@@ -43,7 +40,7 @@ public class CreateProductStepDefinition {
 
     @Given(SCENARIO_ONE_GIVEN_STEP)
     public void givenStep() {
-        supplier.attemptsTo(Connect.service());
+        supplier.attemptsTo(ConnectTo.service());
     }
 
     @When(SCENARIO_ONE_WHEN_STEP)

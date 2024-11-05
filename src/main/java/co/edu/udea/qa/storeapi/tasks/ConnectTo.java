@@ -8,12 +8,12 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.thucydides.model.environment.SystemEnvironmentVariables;
 import net.thucydides.model.util.EnvironmentVariables;
 
-public class Connect implements Task {
+public class ConnectTo implements Task {
 
-    private final EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
     private final String urlString;
 
-    public Connect(){
+    public ConnectTo(){
+        EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
         urlString = environmentVariables.getProperty("webdriver.base.url");
     }
     @Override
@@ -22,7 +22,7 @@ public class Connect implements Task {
         actor.whoCan(CallAnApi.at(urlString));
     }
 
-    public static Connect service(){
-        return Tasks.instrumented(Connect.class);
+    public static ConnectTo service(){
+        return Tasks.instrumented(ConnectTo.class);
     }
 }
