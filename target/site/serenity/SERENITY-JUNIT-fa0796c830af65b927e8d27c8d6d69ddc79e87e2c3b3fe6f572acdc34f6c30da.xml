@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="As a customer, I need to get information of available products" skipped="0" tests="2" time="1.84" timestamp="2024-11-05 01:02:53"><testcase name="get information about the product"/><testcase name="Limit the quantity of product information"/></testsuite>
